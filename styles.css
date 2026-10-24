@@ -273,6 +273,38 @@ a {
   transform: rotate(1.4deg);
 }
 
+.hero-photo-panel {
+  background: var(--ink);
+  isolation: isolate;
+  min-height: 600px;
+  overflow: hidden;
+  padding: 0;
+}
+
+.hero-photo-panel::after {
+  background: linear-gradient(
+    180deg,
+    rgba(16, 20, 19, 0.18) 0%,
+    transparent 44%,
+    rgba(16, 20, 19, 0.66) 100%
+  );
+  content: "";
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+  z-index: 1;
+}
+
+.hero-work-photo {
+  display: block;
+  height: 100%;
+  inset: 0;
+  object-fit: cover;
+  object-position: 50% 38%;
+  position: absolute;
+  width: 100%;
+}
+
 .panel-top {
   align-items: center;
   border-bottom: 1px solid var(--line);
@@ -283,6 +315,34 @@ a {
   letter-spacing: 0.13em;
   padding-bottom: 20px;
   text-transform: uppercase;
+}
+
+.panel-top-photo {
+  backdrop-filter: blur(10px);
+  background: rgba(16, 20, 19, 0.82);
+  border: 0;
+  color: white;
+  left: 22px;
+  padding: 15px 16px;
+  position: absolute;
+  right: 22px;
+  top: 22px;
+  z-index: 2;
+}
+
+.photo-note {
+  background: var(--lime);
+  bottom: 140px;
+  color: var(--ink);
+  font-size: 10px;
+  font-weight: 900;
+  left: 22px;
+  letter-spacing: 0.12em;
+  margin: 0;
+  padding: 10px 13px;
+  position: absolute;
+  text-transform: uppercase;
+  z-index: 2;
 }
 
 .status-dot {
@@ -382,6 +442,18 @@ a {
   display: grid;
   grid-template-columns: 1fr 1fr;
   padding-top: 20px;
+}
+
+.panel-stats-photo {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 253, 248, 0.94);
+  border-top: 0;
+  bottom: 22px;
+  left: 22px;
+  padding: 20px;
+  position: absolute;
+  right: 22px;
+  z-index: 2;
 }
 
 .panel-stats > div + div {
@@ -840,6 +912,10 @@ footer p {
     transform: none;
   }
 
+  .hero-photo-panel {
+    min-height: 600px;
+  }
+
   .services-section,
   .gallery-heading,
   .process-section,
@@ -924,6 +1000,29 @@ footer p {
   .hero-panel {
     min-height: 430px;
     padding: 20px;
+  }
+
+  .hero-photo-panel {
+    min-height: 560px;
+    padding: 0;
+  }
+
+  .panel-top-photo {
+    left: 16px;
+    right: 16px;
+    top: 16px;
+  }
+
+  .photo-note {
+    bottom: 132px;
+    left: 16px;
+  }
+
+  .panel-stats-photo {
+    bottom: 16px;
+    left: 16px;
+    padding: 18px;
+    right: 16px;
   }
 
   .circuit-board {
